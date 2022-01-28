@@ -3,8 +3,8 @@ import { galleryItems } from './gallery-items.js';
 
 
 const galleryContainer = document.querySelector('.gallery');
-  const galleryMarkup = createGalleryItem(galleryItems);
-
+  // const galleryMarkup = createGalleryItem(galleryItems);
+  // galleryContainer.addEventListener('click', createGalleryItem)
 function addElement(){
     const newDiv = document.createElement("div");
     newDiv.innerHTML = "galleryItem"
