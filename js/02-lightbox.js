@@ -1,9 +1,5 @@
 import { galleryItems } from './gallery-items.js';
-// Change code below this line
 
-// const div = document.createElement("li");
-// const element = document.querySelector("ul")
-// element.prepend(div);
 
 
 const galleryContainer = document.querySelector('.gallery');

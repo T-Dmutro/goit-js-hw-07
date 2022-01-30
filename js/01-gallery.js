@@ -6,8 +6,12 @@ const element = document.querySelector("p")
 element.after(div);
 
 
+
 const galleryContainer = document.querySelector('.gallery');
-  const galleryMarkup = createGalleryItem(galleryItems);
+galleryContainer.addEventListener('click', createGalleryItem);
+galleryContainer.addEventListener( 'click', function(e) {
+  e.preventDefault();
+}, false);
   
 // function addElement(){
 //     const newDiv = document.createElement("div");
@@ -36,3 +40,14 @@ function createGalleryItem() {
   }
   createGalleryItem();
   
+  galleryContainer.addEventListener('click', onClickImgGallery);
+ 
+  
+  function onClickImgGallery(evt){
+    const img = evt.target.dataset.source;
+    const instance = basicLightbox.create(`
+        <img src="${img}" width="800" height="600">
+    `);
+    
+    instance.show();
+    };
