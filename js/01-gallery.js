@@ -27,16 +27,14 @@ function createCardMarkup( element){
 
 function onCardsContainerClick(el){
     // console.log(el.target.parentNode)
-    blockStandartAction(el)
+    el.preventDefault()
  if (el.target.nodeName !== 'IMG'){
     return;
  }
- console.log(el.target.dataset.source)
-const instance = basicLightbox.create
-(`
-<img src="${el.target.dataset.source}" width="800" height="600">
+//  console.log(el.target.dataset.source)
+const instance = basicLightbox.create(`
+    <img src="${el.target.dataset.source}" width="800" height="600">
 `)
-
     instance.show();
    
     window.addEventListener("keydown", (el)=>{
@@ -46,9 +44,9 @@ const instance = basicLightbox.create
  
 }
 
-function blockStandartAction(el){
-    el.preventDefault()
-}
+// function blockStandartAction(el){
+//     el.preventDefault()
+// }
 
 
 
