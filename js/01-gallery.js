@@ -32,8 +32,11 @@ function onCardsContainerClick(el){
     return;
  }
  console.log(el.target.dataset.source)
-const instance = basicLightbox.create(
-    `<img width="1400" height="900" scr= " ${el.target.dataset.source}" >`);
+const instance = basicLightbox.create
+(`
+<img src="${el.target.dataset.source}" width="800" height="600">
+`)
+
     instance.show();
    
     window.addEventListener("keydown", (el)=>{
