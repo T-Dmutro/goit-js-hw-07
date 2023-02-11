@@ -25,7 +25,7 @@ function createCardMarkup( element){
         console.log('Працює')
         blockStandartAction(el);
 
-        let gallery = new SimpleLightbox('.gallery a');
+        let gallery = new SimpleLightbox('.gallery a', {captionsData : "alt", captionDelay : 250, showCounter: false, scaleImageToRatio: true});
 gallery.on('show.simplelightbox', function () {
 	// do something…
 });
