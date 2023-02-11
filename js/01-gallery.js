@@ -36,9 +36,9 @@ const instance = basicLightbox.create(
     `<img width="1400" height="900" scr= " ${el.target.dataset.source}" >`);
     instance.show();
    
-    cartContainer.addEventListener("keydown", (el)=>{
+    window.addEventListener("keydown", (el)=>{
     if (el.code === "Escape") {
-        close();}
+        instance.close();}
     })
  
 }
