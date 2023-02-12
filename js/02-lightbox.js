@@ -12,7 +12,8 @@ const cartContainer = document.querySelector('.gallery');
 cartContainer.addEventListener('click', onCardsContainerClick)
 const cardsMarkup = createCardMarkup(galleryItems);
 cartContainer.insertAdjacentHTML('beforeend', cardsMarkup)
-
+let gallery = new SimpleLightbox('.gallery a', {captionsData : "alt", captionDelay : 250, showCounter: false, scaleImageToRatio: true});
+gallery.on('show.simplelightbox', function () {	});
 function createCardMarkup( element){ 
     return element.map(({preview, original, description})=>{
         return  `<a class="gallery__item" href="${original}">
@@ -24,11 +25,7 @@ function createCardMarkup( element){
     function onCardsContainerClick(el){
         console.log('Працює')
         blockStandartAction(el);
-
-        let gallery = new SimpleLightbox('.gallery a', {captionsData : "alt", captionDelay : 250, showCounter: false, scaleImageToRatio: true});
-gallery.on('show.simplelightbox', function () {
-	// do something…
-});
+        
     }
     function blockStandartAction(el){
         el.preventDefault()
